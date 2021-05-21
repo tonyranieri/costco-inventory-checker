@@ -1,6 +1,7 @@
 import fetch from "isomorphic-fetch";
 import colors from "colors";
 import { items } from "./costco-config.js";
+import { sendEmail } from "./mailgun.js";
 import { config } from "dotenv";
 config();
 
@@ -43,6 +44,10 @@ export async function checkCostco() {
     const data = await checkStore(itemNumber);
 
     if (data.availableForSale) {
+      sendEmail(
+        `${description} is available!`,
+        `${description} is available!  <a href="${item.buyNowLink}">Buy it now!</a>`
+      );
       console.log(colors.green(`${description} is available!`));
     } else {
       console.log(colors.red(`${description} is not available!`));
