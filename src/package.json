@@ -1,0 +1,18 @@
+{
+    "name": "costco-inventory-checker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "type": "module",
+    "author": "Tony Ranieri",
+    "license": "ISC",
+    "dependencies": {
+        "colors": "^1.4.0",
+        "dotenv": "^9.0.2",
+        "isomorphic-fetch": "^3.0.0",
+        "node-cron": "^3.0.0"
+    }
+}
